@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">Share a meal</string>
-    <string name="test">Hello world !</string>
+
+    <string name="loading">Chargement...</string>
+    <string name="error">Desole un erreur est survenu</string>
+    <string name="login">Identifiant</string>
+    <string name="password">Mot de passe</string>
+    <string name="connect">Connexion</string>
+    <string name="noAccount">Sans compte</string>
+    <string name="eventId">ID</string>
+    <string name="eventName">Nom de l\'evenement</string>
+    <string name="eventStartDate">Debut de l\'evenement</string>
+    <string name="eventActive">l\'evenement est en cours</string>
+    <string name="eventDescription">Description de l\'evenement</string>
 </resources>

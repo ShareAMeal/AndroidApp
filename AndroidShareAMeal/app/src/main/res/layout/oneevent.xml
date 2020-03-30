@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/eventID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/eventId" />
+
+    <TextView
+        android:id="@+id/eventName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/eventName" />
+
+    <TextView
+        android:id="@+id/eventStartDate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/eventStartDate" />
+
+    <Switch
+        android:id="@+id/eventActive"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/eventActive" />
+
+    <TextView
+        android:id="@+id/eventDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/eventDescription" />
+
+</LinearLayout>
