@@ -1,17 +1,24 @@
 package fr.insalyon.tc.pweb.shareameal;
 
 
+import android.util.Log;
+
+import java.util.Calendar;
+import java.util.Date;
+
 public class Event {
+
+    private final static String TAG = "EventClass";
 
     private int id;
     private String name;
-    private String start_date;
+    private Date start_datetime;
     private boolean active;
     private String description;
 
 
     public String toString() {
-        return "id = " + this.id + "| Name = " + this.name ;
+        return "id = " + this.id + "| Name = " + this.name + "| Date = " + this.start_datetime;
     }
 
     public int getId() {
@@ -22,12 +29,17 @@ public class Event {
         return name;
     }
 
-    public String getStart_date() {
-        return start_date;
+    public Date getStart_datetime() {
+        return start_datetime;
     }
 
     public boolean isActive() {
         return active;
+    }
+
+    public void active(Boolean active){
+        this.active = active;
+        Log.d(TAG, Boolean.toString(this.active));
     }
 
     public String getDescription() {

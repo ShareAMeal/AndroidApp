@@ -1,11 +1,18 @@
 package fr.insalyon.tc.pweb.shareameal;
 
+import android.app.DatePickerDialog;
 import android.support.v7.app.AppCompatActivity;
 
+import java.util.Calendar;
 import java.util.Vector;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.DatePicker;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -14,6 +21,8 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class event_list_activity extends AppCompatActivity {
+
+    private static final String TAG = "EventListActivity";
 
 
     private String url = "http://api.shareameal.ribes.ovh/api/";
@@ -24,7 +33,7 @@ public class event_list_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.event_list_activity);
 
-       final ListView list = findViewById(R.id.listContact);
+       final ListView list = findViewById(R.id.listEvent);
 
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(url)
@@ -36,21 +45,21 @@ public class event_list_activity extends AppCompatActivity {
             @Override
             public void onResponse(Call<Vector<Event>> call, Response<Vector<Event>> response){
 
-//                System.out.println("-->" + response.body());
-//
-//                for(Event event: response.body()){
-//                    System.out.println("===>" + event);
-//                }
+                Log.d(TAG,"-->" + response.body());
+
+                for(Event event: response.body()){
+                   Log.d(TAG, "===>" + event);
+                }
 
                 EventAdapter adapter = new EventAdapter(event_list_activity.this,response.body());
-                ListView listEvent = (ListView) findViewById(R.id.listContact);
+                ListView listEvent = (ListView) findViewById(R.id.listEvent);
 
                 listEvent.setAdapter(adapter);
             }
 
             @Override
             public void onFailure(Call<Vector<Event>> call, Throwable t ){
-                System.err.println("-----> ERROR" + t.getMessage());
+                Log.e(TAG,"-----> ERROR" + t.getMessage());
             }
 
         });
