@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:gravity="center"
     android:paddingLeft="40dp"
-    android:paddingRight="40dp"
-    >
+    android:paddingRight="40dp">
 
     <EditText
-        android:id="@+id/login"
+        android:id="@+id/main_activity_username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
         android:gravity="left"
         android:inputType="textPersonName"
-        android:hint="@string/login" />
+        android:hint="@string/username" />
 
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/main_activity_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -26,14 +26,15 @@
         android:inputType="textPassword" />
 
     <Button
-        android:id="@+id/connect"
+        android:id="@+id/main_activity_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/connect" />
+        android:text="@string/login" />
 
     <Button
-        android:id="@+id/noAccount"
+        android:id="@+id/main_activity_noAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/noAccount" />
+
 </LinearLayout>
