@@ -1,6 +1,7 @@
 package fr.insalyon.tc.pweb.shareameal;
 import fr.insalyon.tc.pweb.shareameal.object.Asso;
 import fr.insalyon.tc.pweb.shareameal.object.Event;
+import fr.insalyon.tc.pweb.shareameal.object.User;
 
 import java.util.Vector;
 
@@ -22,6 +23,11 @@ interface JsonPlaceHolderApi {
     @POST("/api/event/")
     Call<Post> createPost(
             @Body Post post,
+            @Header("Authorization") String auth
+    );
+
+    @GET("/api/myuser")
+    Call<User> checkUser(
             @Header("Authorization") String auth
     );
 }
