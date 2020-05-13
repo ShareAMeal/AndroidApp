@@ -1,7 +1,6 @@
 package fr.insalyon.tc.pweb.shareameal;
 
 import android.os.Bundle;
-import android.text.NoCopySpan;
 
 import androidx.appcompat.app.AppCompatActivity;
 

@@ -4,14 +4,24 @@ import fr.insalyon.tc.pweb.shareameal.object.Event;
 
 import java.util.Vector;
 
+import fr.insalyon.tc.pweb.shareameal.object.Post;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
+import retrofit2.http.Header;
+import retrofit2.http.POST;
 
 interface JsonPlaceHolderApi {
 
-    @GET("event/?format=json")
+    @GET("/api/event/?format=json")
     Call<Vector<Event>> getEvents();
 
-    @GET("asso/?format=json")
+    @GET("/api/asso/?format=json")
     Call<Vector<Asso>> getAssos();
+
+    @POST("/api/event/")
+    Call<Post> createPost(
+            @Body Post post,
+            @Header("Authorization") String auth
+    );
 }

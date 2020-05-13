@@ -9,7 +9,13 @@
     <string name="eventTime">Time</string>
     <string name="eventActive">isActive</string>
     <string name="eventDescription">Description</string>
-    <string name="submit">submit</string>
-    <string name="cancel">cancel</string>
+    <string name="submit">Submit</string>
+    <string name="cancel">Cancel</string>
     <string name="eventEdition">Event Edit</string>
+    <string name="back">Back</string>
+    <string name="shearch">Shearch</string>
+    <string name="new_event">New</string>
+    <string name="add_bdd_ok">Add succefully</string>
+    <string name="add_bdd_nok">Add failed</string>
+    <string name="error">An error has occurred</string>
 </resources>

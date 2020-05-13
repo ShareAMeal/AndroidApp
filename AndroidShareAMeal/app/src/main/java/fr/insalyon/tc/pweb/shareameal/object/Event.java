@@ -13,9 +13,23 @@ public class Event {
     private boolean active;
     private String description;
 
+    public Event(int id, String name, Date start_dateTime, boolean active, String description){
+        this.id = id;
+        this.name = name;
+        this.start_datetime = start_dateTime;
+        this.active = active;
+        this.description = description;
+    }
+
 
     public String toString() {
-        return "id = " + this.id + "| Name = " + this.name + "| Date = " + this.start_datetime;
+        return "{ "+
+                "id : " + id +
+                " , name : " + name +
+                " , start_datetime : " + start_datetime +
+                ", active : " + active +
+                " , description : " + description +
+                "}";
     }
 
     public int getId() {
