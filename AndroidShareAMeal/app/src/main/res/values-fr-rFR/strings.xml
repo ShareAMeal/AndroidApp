@@ -1,8 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
 <resources>
     <string name="app_name">Share a Meal</string>
     <string name="login">Connexion</string>
     <string name="password">Mot de passe</string>
     <string name="username">Identifiant</string>
     <string name="noAccount">Sans compte</string>
+    <string name="eventName">Nom</string>
+    <string name="eventStartDate">Date</string>
+    <string name="eventTime">Heure</string>
+    <string name="eventActive">est actif</string>
+    <string name="eventDescription">Description</string>
+    <string name="submit">Valider</string>
+    <string name="cancel">Annuler</string>
+    <string name="eventEdition">Modifier l\'événement</string>
+    <string name="back">Retour</string>
+    <string name="shearch">Rechercher</string>
+    <string name="new_event">Ajouter</string>
+    <string name="add_bdd_ok">Ajouté avec succès</string>
+    <string name="add_bdd_nok">Echec de l\'ajout</string>
+    <string name="error">Une erreur est survenue</string>
+    <string name="connectFailed">La connexion a échoué, veuillez rééssayer</string>
+    <string name="connecting">Connexion en cours</string>
+    <string name="badUser_pass">Identifiant et/ou mot de passe incorrects</string>
+    <string name="somethingWrong">Quelque chose s\'est mal passé...</string>
+    <string name="emptyUsername">L\'identifiant est vide</string>
+    <string name="emptyPassword">Le mot de passe est vide</string>
+    <string name="emptyUsername_Password">Le mot de passe et l\'identifiant sont vides</string>
+    <string name="loading">Chargement....</string>
+    <string name="noValue">Il n\'y a pas d\'evenements dans votre association</string>
 </resources>

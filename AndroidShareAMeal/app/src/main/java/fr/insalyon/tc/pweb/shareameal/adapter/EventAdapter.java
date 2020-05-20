@@ -1,8 +1,11 @@
 package fr.insalyon.tc.pweb.shareameal.adapter;
+import fr.insalyon.tc.pweb.shareameal.ConsultEventActivity;
+import fr.insalyon.tc.pweb.shareameal.EditEventActivity;
 import fr.insalyon.tc.pweb.shareameal.object.Event;
 import fr.insalyon.tc.pweb.shareameal.R;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +15,7 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.SimpleDateFormat;
 import java.util.Vector;
@@ -23,11 +27,15 @@ public class EventAdapter extends BaseAdapter {
     private Context context;
     private Vector<Event> list;
     private LayoutInflater m_inflater;
+    private String action;
+    private String credentials;
 
 
-    public EventAdapter(Context context, Vector<Event> list){
+    public EventAdapter(Context context, Vector<Event> list, String action, String credentials){
         this.list = list;
         this.context = context;
+        this.action = action;
+        this.credentials = credentials;
         m_inflater = LayoutInflater.from(context);
     }
 
@@ -71,6 +79,38 @@ public class EventAdapter extends BaseAdapter {
 
         Log.d(TAG, (String) date.getText().toString());
 
+        if(this.action == "getEventsNoAccount" ){
+
+            name.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "test", Toast.LENGTH_SHORT).show();
+
+                    Intent lookat = new Intent(context, new ConsultEventActivity(
+                            list.get(position).getName(),
+                            list.get(position).getStart_datetime(),
+                            list.get(position).isActive(),
+                            list.get(position).getDescription()).getClass());
+                    context.startActivity(lookat);
+                }
+            });
+        } else if(this.action == "getEventsAccount") {
+
+            name.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent edit = new Intent(context, new  EditEventActivity(
+                            list.get(position).getName(),
+                            list.get(position).getStart_datetime(),
+                            list.get(position).isActive(),
+                            list.get(position).getDescription(),
+                            list.get(position).getId(),
+                            "modif",
+                            credentials).getClass());
+                    context.startActivity(edit);
+                }
+            });
+        }
 
         return layout;
     }

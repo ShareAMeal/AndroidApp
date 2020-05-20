@@ -19,8 +19,8 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
-    private String url = "http://api.shareameal.ribes.ovh/";
-//    private String url = "http:192.168.1.33:8001";
+//    private String url = "http://api.shareameal.ribes.ovh";
+    private String url = "http:192.168.1.33:8001";
     private String credentials = new String();
 
     @Override
@@ -36,32 +36,38 @@ public class MainActivity extends AppCompatActivity {
                 final EditText username = findViewById(R.id.main_activity_username);
                 final EditText password = findViewById(R.id.main_activity_password);
 
-//                RetrofitClient.getClient()
+                if(username.getText().toString().equals(new String()) && password.getText().toString().equals(new String())) {
+                    Toast.makeText(getApplicationContext(), R.string.emptyUsername_Password, Toast.LENGTH_SHORT).show();
+                } else if(password.getText().toString().equals(new String())){
+                    Toast.makeText(getApplicationContext(), R.string.emptyPassword, Toast.LENGTH_SHORT).show();
+                } else if(username.getText().toString().equals(new String())) {
+                    Toast.makeText(getApplicationContext(), R.string.emptyUsername, Toast.LENGTH_SHORT).show();
+                }else {
+                    credentials = Credentials.basic(username.getText().toString(), password.getText().toString());
 
+                    // connexion au backEnd
+                    JsonPlaceHolderApi jsonPlaceHolderApi = RetrofitClient.getClient(url).create(JsonPlaceHolderApi.class);
+                    jsonPlaceHolderApi.checkUser(credentials).enqueue(new Callback<User>() {
+                        @Override
+                        public void onResponse(Call<User> call, Response<User> response) {
+                            if (response.code() == 200) {
+                                startActivity(new Intent(getApplicationContext(), new EventListActivity("getEventsAccount", credentials).getClass()));
+                                Toast.makeText(getApplicationContext(), R.string.connecting, Toast.LENGTH_SHORT).show();
+                            } else if (response.code() == 403) {
+                                Toast.makeText(getApplicationContext(), R.string.badUser_pass, Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(getApplicationContext(), R.string.error, Toast.LENGTH_SHORT).show();
+                            }
 
-                credentials = Credentials.basic(username.getText().toString(), password.getText().toString());
-
-                // connexion au backEnd
-                JsonPlaceHolderApi jsonPlaceHolderApi = RetrofitClient.getClient(url).create(JsonPlaceHolderApi.class);
-                jsonPlaceHolderApi.checkUser(credentials).enqueue(new Callback<User>() {
-                    @Override
-                    public void onResponse(Call<User> call, Response<User> response) {
-                        if(response.code() == 200){
-                            startActivity(new Intent(getApplicationContext(), new EventListActivity("getEventsAccount", credentials).getClass()));
-                            Toast.makeText(getApplicationContext(), R.string.connecting, Toast.LENGTH_SHORT).show();
-                        } else if (response.code() == 403){
-                            Toast.makeText(getApplicationContext(), R.string.badUser_pass, Toast.LENGTH_SHORT).show();
                         }
 
-                    }
+                        @Override
+                        public void onFailure(Call<User> call, Throwable t) {
+                            Toast.makeText(getApplicationContext(), R.string.connectFailed, Toast.LENGTH_SHORT).show();
+                        }
+                    });
 
-                    @Override
-                    public void onFailure(Call<User> call, Throwable t) {
-                        Toast.makeText(getApplicationContext(), R.string.connectFailed, Toast.LENGTH_SHORT).show();
-                    }
-                });
-
-
+                }
 
             }
         });

@@ -21,11 +21,12 @@ public class Post {
     @Expose
     private String description;
 
-    public Post(String name, String startDatetime, Boolean active, String description) {
+    public Post(String name, String startDatetime, Boolean active, String description, int id) {
         this.name = name;
         this.startDatetime = startDatetime;
         this.active = active;
         this.description = description;
+        this.id = id;
     }
 
     public Integer getId() {
