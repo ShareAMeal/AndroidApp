@@ -14,7 +14,7 @@
     <string name="cancel">Annuler</string>
     <string name="eventEdition">Modifier l\'événement</string>
     <string name="back">Retour</string>
-    <string name="shearch">Rechercher</string>
+    <string name="search">Rechercher</string>
     <string name="new_event">Ajouter</string>
     <string name="add_bdd_ok">Ajouté avec succès</string>
     <string name="add_bdd_nok">Echec de l\'ajout</string>
