@@ -27,4 +27,6 @@
     <string name="emptyUsername_Password">Username and Password are empty</string>
     <string name="loading">Loading....</string>
     <string name="noValue">No events in your association</string>
+    <string name="city">City</string>
+    <string name="noCity">No city configured</string>
 </resources>

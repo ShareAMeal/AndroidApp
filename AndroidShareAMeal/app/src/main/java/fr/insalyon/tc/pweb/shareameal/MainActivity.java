@@ -19,8 +19,6 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = "MainActivity";
-//    private String url = "http://api.shareameal.ribes.ovh";
-    private String url = "http:192.168.1.33:8001";
     private String credentials = new String();
 
     @Override
@@ -46,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                     credentials = Credentials.basic(username.getText().toString(), password.getText().toString());
 
                     // connexion au backEnd
-                    JsonPlaceHolderApi jsonPlaceHolderApi = RetrofitClient.getClient(url).create(JsonPlaceHolderApi.class);
+                    JsonPlaceHolderApi jsonPlaceHolderApi = RetrofitClient.getClient().create(JsonPlaceHolderApi.class);
                     jsonPlaceHolderApi.checkUser(credentials).enqueue(new Callback<User>() {
                         @Override
                         public void onResponse(Call<User> call, Response<User> response) {

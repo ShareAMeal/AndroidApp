@@ -12,13 +12,15 @@ public class Event {
     private Date start_datetime;
     private boolean active;
     private String description;
+    private String ville;
 
-    public Event(int id, String name, Date start_dateTime, boolean active, String description){
+    public Event(int id, String name, Date start_dateTime, boolean active, String description, String city){
         this.id = id;
         this.name = name;
         this.start_datetime = start_dateTime;
         this.active = active;
         this.description = description;
+        this.ville = city;
     }
 
 
@@ -29,7 +31,12 @@ public class Event {
                 " , start_datetime : " + start_datetime +
                 ", active : " + active +
                 " , description : " + description +
+                ", ville : " + ville +
                 "}";
+    }
+
+    public String getVille() {
+        return ville;
     }
 
     public int getId() {

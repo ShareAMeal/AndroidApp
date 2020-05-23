@@ -17,7 +17,7 @@ import retrofit2.http.Query;
 
 interface JsonPlaceHolderApi {
 
-    @GET("/api/event/?format=json/")
+    @GET("/api/event/?format=json")
     Call<Vector<Event>> getEvents();
 
     @GET("/api/event/?format=json")

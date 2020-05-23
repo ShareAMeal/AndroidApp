@@ -7,7 +7,12 @@ public class RetrofitClient {
 
     private static Retrofit retrofit = null;
 
-    public static Retrofit getClient(String url) {
+
+    public static Retrofit getClient() {
+
+//        String url = "http://api.shareameal.ribes.ovh";
+        String url = "http:192.168.1.33:8001";
+
         if(retrofit == null) {
             retrofit = new Retrofit.Builder()
                     .baseUrl(url)

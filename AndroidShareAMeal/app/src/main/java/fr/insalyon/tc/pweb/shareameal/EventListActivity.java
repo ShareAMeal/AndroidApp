@@ -37,9 +37,6 @@ public class EventListActivity extends AppCompatActivity {
 
     private static final String TAG = "EventListActivity";
 
-//    private String url = "http://api.shareameal.ribes.ovh";
-    private String url = "http://192.168.1.33:8001";
-
     @Override
     public void onCreate(Bundle saveInstance){
         super.onCreate(saveInstance);
@@ -64,7 +61,7 @@ public class EventListActivity extends AppCompatActivity {
         });
 
 
-        JsonPlaceHolderApi jsonPlaceHolderApi = RetrofitClient.getClient(url).create(JsonPlaceHolderApi.class);
+        JsonPlaceHolderApi jsonPlaceHolderApi = RetrofitClient.getClient().create(JsonPlaceHolderApi.class);
 
 
         if (this.action == "getEventsNoAccount") {
@@ -116,6 +113,7 @@ public class EventListActivity extends AppCompatActivity {
                     Intent edit = new Intent(getApplicationContext(),new  EditEventActivity(getString(R.string.eventName),
                             new Date(),
                             true,
+                            getString(R.string.city),
                             getString(R.string.eventDescription),
                             0,
                             "new",
@@ -136,7 +134,7 @@ public class EventListActivity extends AppCompatActivity {
                         Log.d(TAG, "Asso: " + myAsso);
                         Log.d(TAG, "Asso id: " + id);
 
-                        JsonPlaceHolderApi jsonPlaceHolderApi = RetrofitClient.getClient(url).create(JsonPlaceHolderApi.class);
+                        JsonPlaceHolderApi jsonPlaceHolderApi = RetrofitClient.getClient().create(JsonPlaceHolderApi.class);
                         Call<Vector<Event>> myEvents = jsonPlaceHolderApi.getMyEvents(id);
 
                         myEvents.enqueue(new Callback<Vector<Event>>() {

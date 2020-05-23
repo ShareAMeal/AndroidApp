@@ -17,16 +17,28 @@ public class Post {
     @SerializedName("active")
     @Expose
     private Boolean active;
+    @SerializedName("ville")
+    @Expose
+    private String city;
     @SerializedName("description")
     @Expose
     private String description;
 
-    public Post(String name, String startDatetime, Boolean active, String description, int id) {
+    public Post(String name, String startDatetime, Boolean active, String city, String description, int id) {
         this.name = name;
         this.startDatetime = startDatetime;
         this.active = active;
+        this.city = city;
         this.description = description;
         this.id = id;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public Integer getId() {

@@ -18,12 +18,14 @@ public class ConsultEventActivity extends AppCompatActivity {
     private static String name;
     private static Date date;
     private static boolean active;
+    private static String city;
     private static String descritption;
 
-    public ConsultEventActivity(String name, Date date, boolean active, String description){
+    public ConsultEventActivity(String name, Date date, boolean active, String city, String description){
         this.name = name;
         this.date = date;
         this.active = active;
+        this.city = city;
         this.descritption = description;
     }
 
@@ -38,12 +40,14 @@ public class ConsultEventActivity extends AppCompatActivity {
         TextView date = findViewById(R.id.one_event_for_consult_eventStartDate);
         TextView time = findViewById(R.id.one_event_for_consult_eventStartTime);
         Switch isActive = findViewById(R.id.one_event_for_consult_eventActive);
+        TextView city = findViewById(R.id.one_event_for_consult_eventCity);
         TextView description = findViewById(R.id.one_event_for_consult_eventDescription);
 
 
         name.setText(this.name);
         isActive.setChecked(this.active);
         isActive.setClickable(false);
+        city.setText(this.city);
         description.setText(this.descritption);
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/YYYY");

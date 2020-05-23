@@ -48,4 +48,10 @@
         android:layout_height="wrap_content"
         android:text="@string/eventDescription" />
 
+    <TextView
+        android:id="@+id/one_event_for_event_list_eventCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/city" />
+
 </LinearLayout>

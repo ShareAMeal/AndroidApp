@@ -64,11 +64,19 @@ public class EventAdapter extends BaseAdapter {
         TextView date = layout.findViewById(R.id.one_event_for_event_list_eventStartDate);
         TextView time = layout.findViewById(R.id.one_event_for_event_list_eventStartTime);
         Switch isActive = layout.findViewById(R.id.one_event_for_event_list_eventActive);
+        TextView city = layout.findViewById(R.id.one_event_for_event_list_eventCity);
         TextView description = layout.findViewById(R.id.one_event_for_event_list_eventDescription);
 
         name.setText(list.get(position).getName());
         isActive.setChecked(list.get(position).isActive());
         isActive.setClickable(false);
+
+        if(list.get(position).getVille().isEmpty()){
+            city.setText(R.string.noCity);
+        } else {
+            city.setText(list.get(position).getVille());
+        }
+
         description.setText(list.get(position).getDescription());
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/YYYY");
@@ -90,6 +98,7 @@ public class EventAdapter extends BaseAdapter {
                             list.get(position).getName(),
                             list.get(position).getStart_datetime(),
                             list.get(position).isActive(),
+                            list.get(position).getVille(),
                             list.get(position).getDescription()).getClass());
                     context.startActivity(lookat);
                 }
@@ -103,6 +112,7 @@ public class EventAdapter extends BaseAdapter {
                             list.get(position).getName(),
                             list.get(position).getStart_datetime(),
                             list.get(position).isActive(),
+                            list.get(position).getVille(),
                             list.get(position).getDescription(),
                             list.get(position).getId(),
                             "modif",

@@ -28,4 +28,6 @@
     <string name="emptyUsername_Password">Le mot de passe et l\'identifiant sont vides</string>
     <string name="loading">Chargement....</string>
     <string name="noValue">Il n\'y a pas d\'evenements dans votre association</string>
+    <string name="city">Ville</string>
+    <string name="noCity">Pas de ville configurée</string>
 </resources>

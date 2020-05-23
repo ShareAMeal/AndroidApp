@@ -26,21 +26,21 @@ public class EditEventActivity extends AppCompatActivity {
 
     private static final String TAG = "EditEventActivity";
 
-    //    private String url = "http://api.shareameal.ribes.ovh";
-    private String url = "http://192.168.1.33:8001";
 
     private static String name;
     private static Date date;
     private static boolean active;
+    private static String city;
     private static String descritption;
     private static int id;
     private static String action;
     private static String credentials;
 
-    public EditEventActivity(String name, Date date, boolean active, String description, int id, String action, String credentials){
+    public EditEventActivity(String name, Date date, boolean active, String city, String description, int id, String action, String credentials){
         this.name = name;
         this.date = date;
         this.active = active;
+        this.city = city;
         this.descritption = description;
         this.id = id;
         this.action = action;
@@ -64,6 +64,7 @@ public class EditEventActivity extends AppCompatActivity {
         final TextView mDate = findViewById(R.id.one_event_for_edit_eventStartDate);
         final TextView mTime = findViewById(R.id.one_event_for_edit_eventStartTime);
         Switch isActive = findViewById(R.id.one_event_for_edit_eventActive);
+        TextView city = findViewById(R.id.one_event_for_edit_eventCity);
         TextView description = findViewById(R.id.one_event_for_edit_eventDescription);
 
 
@@ -150,11 +151,13 @@ public class EditEventActivity extends AppCompatActivity {
                 TextView date = findViewById(R.id.one_event_for_edit_eventStartDate);
                 TextView time = findViewById(R.id.one_event_for_edit_eventStartTime);
                 Switch isActive = findViewById(R.id.one_event_for_edit_eventActive);
+                TextView city = findViewById(R.id.one_event_for_edit_eventCity);
                 TextView description = findViewById(R.id.one_event_for_edit_eventDescription);
 
                 String postName = name.getText().toString();
                 String stringDate = date.getText().toString();
                 String StringTime = time.getText().toString();
+                String postCity = city.getText().toString();
                 boolean postActive = isActive.isChecked();
                 String postDescription = description.getText().toString();
 
@@ -180,9 +183,9 @@ public class EditEventActivity extends AppCompatActivity {
 
                 if (action == "new") {
 
-                    Post eventPost = new Post(postName, datePost, postActive, postDescription, 0);
+                    Post eventPost = new Post(postName, datePost, postActive, postCity, postDescription, 0);
 
-                    JsonPlaceHolderApi jsonPlaceHolderApi = RetrofitClient.getClient(url).create(JsonPlaceHolderApi.class);
+                    JsonPlaceHolderApi jsonPlaceHolderApi = RetrofitClient.getClient().create(JsonPlaceHolderApi.class);
                     Call<Post> post = jsonPlaceHolderApi.createPost(eventPost, credentials );
 
                     Log.d(TAG, post.request().toString());
@@ -206,9 +209,9 @@ public class EditEventActivity extends AppCompatActivity {
 
                 } else if (action == "modif") {
 
-                    Post eventPost = new Post(postName, datePost, postActive, postDescription, id);
+                    Post eventPost = new Post(postName, datePost, postActive, postCity, postDescription, id);
 
-                    JsonPlaceHolderApi jsonPlaceHolderApi = RetrofitClient.getClient(url).create(JsonPlaceHolderApi.class);
+                    JsonPlaceHolderApi jsonPlaceHolderApi = RetrofitClient.getClient().create(JsonPlaceHolderApi.class);
                     Call<Post> post = jsonPlaceHolderApi.modifEvent(id, eventPost, credentials);
 
                     Log.d(TAG, post.request().toString());
