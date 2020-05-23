@@ -30,4 +30,6 @@
     <string name="noValue">Il n\'y a pas d\'evenements dans votre association</string>
     <string name="city">Ville</string>
     <string name="noCity">Pas de ville configurée</string>
+    <string name="addSuccesfully">Ajouter avec succès</string>
+    <string name="modifSuccesfully">Modification réussie</string>
 </resources>

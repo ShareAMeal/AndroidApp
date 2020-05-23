@@ -177,9 +177,6 @@ public class EditEventActivity extends AppCompatActivity {
                 String datePost = datePostFormat.format(objdate);
                 Log.d(TAG, "date send " + datePost);
 
-                Toast.makeText(getApplicationContext(), "OK, Name : " + name + " Date : " + stringDate + " Time : " + StringTime
-                        + " description : " + description + " isActive : " + isActive, Toast.LENGTH_LONG).show();
-
 
                 if (action == "new") {
 
@@ -194,9 +191,8 @@ public class EditEventActivity extends AppCompatActivity {
                     post.enqueue(new Callback<Post>() {
                         @Override
                         public void onResponse(Call<Post> call, Response<Post> response) {
-                            String content = "code : " + response.code() + " content : " +response.body();
                             Log.d(TAG, "code : " + response.code() + " content : " +response.body());
-                            Toast.makeText(getApplicationContext(), content, Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), R.string.addSuccesfully, Toast.LENGTH_LONG).show();
                         }
 
                         @Override
@@ -220,9 +216,8 @@ public class EditEventActivity extends AppCompatActivity {
                     post.enqueue(new Callback<Post>() {
                         @Override
                         public void onResponse(Call<Post> call, Response<Post> response) {
-                            String content = "code : " + response.code() + " content : " +response.body();
                             Log.d(TAG, "code : " + response.code() + " content : " +response.body());
-                            Toast.makeText(getApplicationContext(), content, Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), R.string.modifSuccesfully, Toast.LENGTH_LONG).show();
                         }
 
                         @Override

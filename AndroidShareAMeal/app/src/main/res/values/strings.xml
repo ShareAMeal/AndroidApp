@@ -29,4 +29,6 @@
     <string name="noValue">No events in your association</string>
     <string name="city">City</string>
     <string name="noCity">No city configured</string>
+    <string name="addSuccesfully">Add successfully</string>
+    <string name="modifSuccesfully">Modification successfully</string>
 </resources>
