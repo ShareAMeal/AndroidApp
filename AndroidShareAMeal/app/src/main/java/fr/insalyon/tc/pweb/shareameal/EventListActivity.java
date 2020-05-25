@@ -218,8 +218,8 @@ public class EventListActivity extends AppCompatActivity {
                 dataInAdapter = true;
                 listEvent.setAdapter(adapter);
 
-            } else if (requestCode == RESULT_CANCELED){
-                Toast.makeText(getApplicationContext(), R.string.somethingWrong, Toast.LENGTH_SHORT).show();
+            } else if (resultCode == RESULT_CANCELED){
+                dataInAdapter = false;
             }
         }
     }

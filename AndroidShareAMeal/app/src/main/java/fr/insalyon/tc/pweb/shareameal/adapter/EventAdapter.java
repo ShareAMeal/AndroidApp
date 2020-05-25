@@ -80,7 +80,7 @@ public class EventAdapter extends BaseAdapter {
         description.setText(list.get(position).getDescription());
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/YYYY");
-        SimpleDateFormat timeFormat = new SimpleDateFormat("hh:mm");
+        SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
 
         date.setText(dateFormat.format(list.get(position).getStart_datetime()));
         time.setText(timeFormat.format(list.get(position).getStart_datetime()));
@@ -92,14 +92,13 @@ public class EventAdapter extends BaseAdapter {
             name.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, "test", Toast.LENGTH_SHORT).show();
-
                     Intent lookat = new Intent(context, new ConsultEventActivity(
                             list.get(position).getName(),
                             list.get(position).getStart_datetime(),
                             list.get(position).isActive(),
                             list.get(position).getVille(),
-                            list.get(position).getDescription()).getClass());
+                            list.get(position).getDescription(),
+                            list.get(position).getOrganizer()).getClass());
                     context.startActivity(lookat);
                 }
             });

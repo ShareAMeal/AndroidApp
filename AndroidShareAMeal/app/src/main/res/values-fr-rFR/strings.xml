@@ -32,4 +32,8 @@
     <string name="noCity">Pas de ville configurée</string>
     <string name="addSuccesfully">Ajouter avec succès</string>
     <string name="modifSuccesfully">Modification réussie</string>
+    <string name="removeFilter">Supprimer les filtres</string>
+    <string name="association">Association</string>
+    <string name="validate">Valider</string>
+    <string name="organizedBy">Organiser par :</string>
 </resources>

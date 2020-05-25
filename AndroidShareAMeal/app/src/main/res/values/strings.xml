@@ -7,7 +7,7 @@
     <string name="eventName">Name</string>
     <string name="eventStartDate">Date</string>
     <string name="eventTime">Time</string>
-    <string name="eventActive">isActive</string>
+    <string name="eventActive">Is active</string>
     <string name="eventDescription">Description</string>
     <string name="submit">Submit</string>
     <string name="cancel">Cancel</string>
@@ -31,4 +31,8 @@
     <string name="noCity">No city configured</string>
     <string name="addSuccesfully">Add successfully</string>
     <string name="modifSuccesfully">Modification successfully</string>
+    <string name="removeFilter">Remove filter</string>
+    <string name="association">Association</string>
+    <string name="validate">Validate</string>
+    <string name="organizedBy">Organized by :</string>
 </resources>
