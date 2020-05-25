@@ -26,12 +26,14 @@
         android:inputType="textPassword" />
 
     <Button
+        android:layout_marginTop="10dp"
         android:id="@+id/main_activity_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/login" />
 
     <Button
+        android:layout_marginTop="10dp"
         android:id="@+id/main_activity_noAccount"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

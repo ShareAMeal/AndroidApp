@@ -55,17 +55,12 @@
         android:layout_height="wrap_content"
         android:text="@string/city" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
         <Button
+            android:layout_marginTop="10dp"
             android:id="@+id/one_event_for_consult_cancel"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:text="@string/cancel" />
-    </LinearLayout>
 
 </LinearLayout>

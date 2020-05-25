@@ -74,7 +74,6 @@ public class SearchActivity extends AppCompatActivity {
                 ArrayList<String> idlist = new ArrayList<>();
                 idlist.add("5");
 
-
                 Intent save = new Intent(v.getContext(), EventListActivity.class);
                 save.putStringArrayListExtra("idList", (ArrayList<String>) idlist);
                 setResult(RESULT_OK, save);
