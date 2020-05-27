@@ -1,10 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="fr.insalyon.tc.pweb.shareameal">
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -13,7 +14,8 @@
 
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
@@ -21,23 +23,28 @@
 
         </activity>
         <activity android:name=".EventListActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
 
         </activity>
         <activity android:name=".OneEventActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
 
         </activity>
         <activity android:name=".EditEventActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
 
         </activity>
         <activity android:name=".ConsultEventActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
 
         </activity>
         <activity android:name=".SearchActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
 
         </activity>
 
