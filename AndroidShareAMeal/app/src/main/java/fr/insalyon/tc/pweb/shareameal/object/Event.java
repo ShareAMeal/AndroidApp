@@ -1,6 +1,8 @@
 package fr.insalyon.tc.pweb.shareameal.object;
 
 import android.util.Log;
+
+import java.io.StringReader;
 import java.util.Date;
 
 public class Event {
@@ -13,16 +15,21 @@ public class Event {
     private boolean active;
     private String description;
     private String ville;
+    private Asso organizer;
 
-    public Event(int id, String name, Date start_dateTime, boolean active, String description, String city){
+    public Event(int id, String name, Date start_dateTime, boolean active, String description, String city, Asso organizer){
         this.id = id;
         this.name = name;
         this.start_datetime = start_dateTime;
         this.active = active;
         this.description = description;
         this.ville = city;
+        this.organizer = organizer;
     }
 
+    public Asso getOrganizer() {
+        return organizer;
+    }
 
     public String toString() {
         return "{ "+

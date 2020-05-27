@@ -56,7 +56,32 @@
         android:text="@string/city" />
 
 
-        <Button
+    <TextView
+        android:id="@+id/one_event_for_consult_organizer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/organizedBy" />
+
+    <TextView
+        android:id="@+id/one_event_for_consult_organizer_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/one_event_for_consult_organizer_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:autoLink="phone" />
+
+    <TextView
+        android:id="@+id/one_event_for_consult_organizer_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:autoLink="email" />
+
+    <Button
             android:layout_marginTop="10dp"
             android:id="@+id/one_event_for_consult_cancel"
             android:layout_width="match_parent"

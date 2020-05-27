@@ -71,6 +71,7 @@ public class EditEventActivity extends AppCompatActivity {
         name.setText(this.name);
         isActive.setChecked(this.active);
         description.setText(this.descritption);
+        city .setText(this.city);
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
@@ -90,7 +91,7 @@ public class EditEventActivity extends AppCompatActivity {
             @Override
             public void onDateSet(DatePicker view, int newyear, int newmonth, int newdayOfMonth) {
 
-                String date = newdayOfMonth + "/" + newmonth + "/" + newyear; //A changer avec un format adaptatif
+                String date = newdayOfMonth + "/" + ( newmonth + 1) + "/" + newyear; //A changer avec un format adaptatif
                 mDate.setText(date);
 
             }
@@ -156,22 +157,22 @@ public class EditEventActivity extends AppCompatActivity {
 
                 String postName = name.getText().toString();
                 String stringDate = date.getText().toString();
-                String StringTime = time.getText().toString();
+                String stringTime = time.getText().toString();
                 String postCity = city.getText().toString();
                 boolean postActive = isActive.isChecked();
                 String postDescription = description.getText().toString();
 
                 Log.d(TAG, "Date : " + stringDate);  //format "DD/MM/YYYY"
-                Log.d(TAG, "Time : " + StringTime);   //format "HH:mm"
+                Log.d(TAG, "Time : " + stringTime);   //format "HH:mm"
 
                 int day = Integer.parseInt(stringDate.split("/")[0]);
                 int month = Integer.parseInt(stringDate.split("/")[1]);
                 int year = Integer.parseInt(stringDate.split("/")[2]);
-                int hours = Integer.parseInt(StringTime.split(":")[0]);
-                int min = Integer.parseInt(StringTime.split(":")[1]);
+                int hours = Integer.parseInt(stringTime.split(":")[0]);
+                int min = Integer.parseInt(stringTime.split(":")[1]);
 
                 Log.d(TAG, "date decompose " + day + "/" + month + "/" + year + "_" + hours + ":" + min);
-                Date objdate = new Date(year-1900, month, day, hours, min);
+                Date objdate = new Date(year-1900, month-1, day, hours, min);
                 Log.d(TAG, "date obj " + date.toString());
                 SimpleDateFormat datePostFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mmZ");
                 String datePost = datePostFormat.format(objdate);

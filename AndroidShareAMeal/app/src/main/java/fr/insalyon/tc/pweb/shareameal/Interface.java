@@ -30,6 +30,9 @@ interface JsonPlaceHolderApi {
             @Header("Authorization") String auth
     );
 
+    @GET("/api/asso/?format=json")
+    Call<Vector<Asso>> getAsso();
+
     @POST("/api/event/")
     Call<Post> createPost(
             @Body Post post,
