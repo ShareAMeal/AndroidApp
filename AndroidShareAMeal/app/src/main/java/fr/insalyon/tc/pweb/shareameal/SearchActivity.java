@@ -51,6 +51,14 @@ public class SearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.search_activity);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        selectedAsso.clear();
+        selectedCity.clear();
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
         final SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");

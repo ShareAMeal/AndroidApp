@@ -13,18 +13,33 @@
 
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="fullSensor">
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
 
         </activity>
-        <activity android:name=".EventListActivity"></activity>
-        <activity android:name=".OneEventActivity"></activity>
-        <activity android:name=".EditEventActivity"></activity>
-        <activity android:name=".ConsultEventActivity"></activity>
-        <activity android:name=".SearchActivity"></activity>
+        <activity android:name=".EventListActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".OneEventActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".EditEventActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".ConsultEventActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".SearchActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
 
     </application>
 </manifest>
